@@ -1,0 +1,305 @@
+
+:root {
+    --preto: #000000;
+    --creme: #fff6e5;
+    --vermelho: #ff3333;
+    --cinza: #8a8a8a;
+    --fonte: "Helvetica Neue", "Helvetica Now Display", Helvetica, "Inter", Arial, sans-serif;
+    --fonte-quiz: "Instrument Sans", "DM Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--preto);
+    color: var(--creme);
+    font-family: var(--fonte);
+    font-weight: 300;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*  leitores de tela */
+.introducao-quiz,
+.area-quiz > h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* 
+   CABEÇALHO
+ */
+
+.cabecalho {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "marca   menu"
+        "titulo  titulo"
+        "slogan  slogan";
+    padding: 18px 0 0;
+}
+
+/* Marca SAMPA TOUR com onda vermelha */
+.cabecalho::before {
+    grid-area: marca;
+    align-self: start;
+    margin: 20px 0 0 46px;
+    padding-left: 16px;
+    min-height: 34px;
+    content: "SAMPA\A TOUR";
+    white-space: pre;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--creme);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 30'%3E%3Cpath d='M2 0 Q8 4 2 8 T2 16 T2 24 T2 30' fill='none' stroke='%23ff3333' stroke-width='3'/%3E%3C/svg%3E") no-repeat left center / 9px 34px;
+}
+
+/* Menu */
+.menu {
+    grid-area: menu;
+    align-self: start;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.menu-lista {
+    display: flex;
+    gap: 18px;
+}
+
+.menu-lista a {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cinza);
+    transition: color 0.2s;
+}
+
+.menu-lista a[aria-current="page"],
+.menu-lista a:hover {
+    color: var(--creme);
+}
+
+.titulo-principal,
+.slogan {
+    justify-self: center;
+    width: min(72vw, 820px);
+}
+
+.titulo-principal {
+    grid-area: titulo;
+    margin-top: 58px;
+    font-size: clamp(52px, 13.2vw, 120px);
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    white-space: nowrap;
+    color: var(--creme);
+}
+
+.titulo-destaque {
+    color: var(--vermelho);
+}
+
+.slogan {
+    grid-area: slogan;
+    margin-top: 26px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--creme);
+}
+
+/* 
+   CARTÃO DO QUIZ
+*/
+
+.area-quiz {
+    display: flex;
+    justify-content: center;
+    margin-top: 58px;
+    padding: 0 20px;
+}
+
+.cartao-quiz {
+    width: min(150%, 478px);
+    padding: 17px 15px 24px;
+    border: 5px solid var(--vermelho);
+    border-radius: 22px;
+    background: #ffffff;
+    color: #111111;
+    font-family: var(--fonte-quiz);
+}
+
+.cartao-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.pergunta {
+    max-width: 260px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: #000000;
+}
+
+.progresso {
+    font-size: 15px;
+    font-weight: 300;
+    color: #111111;
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 63px;
+    padding: 0 8px;
+    border: 0;
+    border-radius: 10px;
+    background: #ececec;
+    color: #111111;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.opcao:hover,
+.opcao:focus-visible {
+    background: var(--vermelho);
+    color: #ffffff;
+    outline: none;
+}
+
+.aviso-quiz {
+    margin-top: 16px;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+    color: #111111;
+}
+
+/* 
+   RODAPÉ
+ */
+
+.rodape {
+    margin: 165px 22px 0;
+    padding: 54px 25px 70px;
+    border-top: 2px solid var(--vermelho);
+}
+
+.rodape h2 {
+    margin-bottom: 24px;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--creme);
+}
+
+.informacoes-contato {
+    display: grid;
+    grid-template-columns: 56.7% 1fr;
+    row-gap: 28px;
+}
+
+.contato-item h3 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--vermelho);
+}
+
+.contato-item p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--creme);
+}
+
+.contato-item a:hover {
+    color: var(--vermelho);
+}
+
+/* 
+   RESPONSIVIDADE
+ */
+
+@media (max-width: 760px) {
+    .cabecalho {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "menu"
+            "marca"
+            "titulo"
+            "slogan";
+    }
+
+    .menu {
+        margin: 0 24px;
+    }
+
+    .menu-lista {
+        flex-wrap: wrap;
+    }
+
+    .cabecalho::before {
+        margin-left: 24px;
+    }
+
+    .titulo-principal,
+    .slogan {
+        width: calc(100% - 48px);
+    }
+
+    .titulo-principal {
+        font-size: 13.6vw;
+    }
+
+    .rodape {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .informacoes-contato {
+        grid-template-columns: 1fr;
+    }
+}
