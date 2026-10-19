@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SampaTour | Pacotes</title>
+
+    <meta name="keywords" content="passeios, turísticos, família, pacotes, São Paulo">
+    <meta name="description" content="Conheça os pacotes de passeios turísticos guiados por São Paulo.">
+
+    <link rel="stylesheet" href="css/pacotes.css">
+    <script src="js/pacotes.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho" id="inicio">
+
+        <h1 class="titulo-principal">PACOTES</h1>
+
+        <p class="slogan">
+            Roteiros temáticos e sazonais, cada um com guia próprio
+        </p>
+
+        <nav class="menu" aria-label="Menu principal">
+            <ul class="menu-lista">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="pacotes.html" aria-current="page">Pacotes</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="reserva.html">Reserve</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="filtro-pacotes" id="categorias-pacotes">
+
+            <h2>EXPLORE NOSSOS PASSEIOS</h2>
+
+            <p>
+                Conheça nossos roteiros e escolha a experiência ideal
+                para explorar São Paulo.
+            </p>
+
+            <nav class="menu-categorias" aria-label="Categorias de passeios">
+                <ul>
+                    <li><a href="#todos-pacotes">Todos</a></li>
+                    <li><a href="#historia-cultura">História e Cultura</a></li>
+                    <li><a href="#arte-arquitetura">Arte e Arquitetura</a></li>
+                    <li><a href="#gastronomia">Gastronomia</a></li>
+                    <li><a href="#pontos-turisticos">Pontos Turísticos</a></li>
+                </ul>
+            </nav>
+
+            <aside class="chamada-quiz">
+                <p>ESTÁ EM DÚVIDA PARA ESCOLHER?</p>
+                <a class="botao-quiz" href="quiz.html">
+                    FAÇA O QUIZ &rarr;
+                </a>
+            </aside>
+
+        </section>
+
+        <section class="lista-pacotes" id="todos-pacotes">
+
+            <h2>NOSSOS PACOTES</h2>
+
+            <!--  HISTÓRIA E CULTURA  -->
+            <section class="categoria-pacotes" id="historia-cultura">
+                <h3>HISTÓRIA E CULTURA</h3>
+
+                <article class="card-passeio" id="sampa-assombrada">
+                    <div class="card-imagem"><img src="img/SampaAssombrada.png" alt="Sampa Assombrada"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Assombrada</button></h4>
+                        <p class="card-descricao">Lendas urbanas da Estação São Bento ao Cemitério da Consolação.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Noturno · Van · 20h30 às 23h</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio noturno com foco em lendas urbanas e locais associados a histórias assustadoras. Inicia-se na Estação São Bento, passa pelo Edifício Martinelli, Viaduto do Chá, antigo Edifício Joelma, Copan e Cemitério da Consolação, com parada para visitação conforme as regras do local. O roteiro termina na região da Avenida Paulista.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-antiga">
+                    <div class="card-imagem"><img src="img/SampaAntiga.png" alt="Sampa Antiga"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Antiga</button></h4>
+                        <p class="card-descricao">Praça da República, Theatro Municipal, Pateo do Collegio e Catedral da Sé.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados, 12h às 14h30</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio dedicado à arquitetura e à história do centro antigo. Começa na Praça da República, passa pelo Theatro Municipal, Centro Cultural Banco do Brasil e Pateo do Collegio, terminando na Catedral da Sé.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-italiana">
+                    <div class="card-imagem"><img src="img/SampaItaliana.png" alt="Sampa Italiana"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Italiana</button></h4>
+                        <p class="card-descricao">Bixiga e suas cantinas, da Estação Brigadeiro à Escadaria do Bixiga.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados</p>
+                        <div class="card-completo" hidden>
+                            <p>Roteiro pelo Bixiga, bairro marcado pela imigração italiana e pelas tradições das cantinas. Começa na Estação Brigadeiro e passa pela Paróquia Imaculada Conceição, Viaduto Armando Puglisi, Rua dos Ingleses, Paróquia Nossa Senhora de Achiropita, Rua Treze de Maio e Escadaria do Bixiga.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-japonesa">
+                    <div class="card-imagem"><img src="img/SampaJaponesa.png" alt="Sampa Japonesa"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Japonesa</button></h4>
+                        <p class="card-descricao">Imigração japonesa e cultura oriental na Liberdade.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Domingos</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio pela história da imigração japonesa e pela cultura oriental na Liberdade. Começa na Estação Japão-Liberdade, passa pela Rua dos Estudantes, Rua Galvão Bueno, Feira da Liberdade, Jardim Oriental e Rua Thomaz Gonzaga, com opção de visitar o Museu Histórico da Imigração Japonesa mediante ingresso à parte.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!--  ARTE E ARQUITETURA  -->
+            <section class="categoria-pacotes" id="arte-arquitetura">
+                <h3>ARTE E ARQUITETURA</h3>
+
+                <article class="card-passeio" id="sampa-artistica">
+                    <div class="card-imagem"><img src="img/SampaArtistica.png" alt="Sampa Artística"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Artística</button></h4>
+                        <p class="card-descricao">Museu da Língua Portuguesa, Pinacoteca e MASP, com trecho de van.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · Terças-feiras · 9h às 15h</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio por museus com acervos importantes. Começando na Estação da Luz, passando pelo Museu da Língua Portuguesa e pela Pinacoteca, com entrada opcional e cobrada à parte, e segue de van até o Museu de Arte de São Paulo Assis Chateaubriand (MASP), com visita guiada ao acervo conforme a programação. Termina na Estação Trianon-MASP.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-urbana">
+                    <div class="card-imagem"><img src="img/SampaUrbana.png" alt="Sampa Urbana"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Urbana</button></h4>
+                        <p class="card-descricao">Arte de rua e grafites no Beco do Batman, na Vila Madalena.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados, 10h às 12h30</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio dedicado à arte de rua e à cultura urbana. Começa na região da Vila Madalena, percorre o Beco do Batman e suas ruas próximas, observando murais, grafites e intervenções artísticas. O roteiro termina com tempo livre para fotografias e exploração das lojas locais.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-arquitetonica">
+                    <div class="card-imagem"><img src="img/SampaArquitetonica.png" alt="Sampa Arquitetônica"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Arquitetônica</button></h4>
+                        <p class="card-descricao">Do MASP à Casa das Rosas pela Avenida Paulista.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Domingos, 9h às 12h</p>
+                        <div class="card-completo" hidden>
+                            <p>Roteiro para observar a arquitetura paulistana de diferentes épocas. Começa no MASP, percorre a Avenida Paulista, destaca edifícios de estilos variados e segue até a Casa das Rosas, explorando a relação entre arquitetura, urbanização e cultura. A visita ao interior dos espaços depende do funcionamento de cada local.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!--  GASTRONOMIA  -->
+            <section class="categoria-pacotes" id="gastronomia">
+                <h3>GASTRONOMIA</h3>
+
+                <article class="card-passeio" id="sampa-de-sabores">
+                    <div class="card-imagem"><img src="img/SampaSabores.png" alt="Sampa de Sabores"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa de Sabores</button></h4>
+                        <p class="card-descricao">Mercado Municipal: bancas, queijos, temperos e o sanduíche de mortadela.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados, 9h às 12h</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio gastronômico pelo Mercado Municipal de São Paulo. Começa na entrada principal do Mercadão e percorre bancas de frutas, queijos, temperos e produtos regionais. Inclui tempo livre para experimentar pratos típicos, como o famoso sanduíche de mortadela, com consumos pagos individualmente.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-oriental-gastronomica">
+                    <div class="card-imagem"><img src="img/SampaOrientalGastronomica.png" alt="Sampa Oriental Gastronômica"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Oriental Gastronômica</button></h4>
+                        <p class="card-descricao">Sabores japoneses e asiáticos pela Liberdade.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Domingos, 11h às 14h</p>
+                        <div class="card-completo" hidden>
+                            <p>Roteiro culinário pela Liberdade, com foco nos sabores japoneses e de outras comunidades asiáticas. Começa na Estação Japão-Liberdade, passa pela Rua Galvão Bueno, pela Feira da Liberdade e pela Rua Thomaz Gonzaga, com paradas opcionais para experimentar comidas e bebidas típicas.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-cafe">
+                    <div class="card-imagem"><img src="img/SampaCafe.png" alt="Sampa Café"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Café</button></h4>
+                        <p class="card-descricao">Cafeterias da Vila Madalena e de Pinheiros.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Domingos, 9h às 11h30</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio por cafeterias e pequenos estabelecimentos da Vila Madalena e de Pinheiros. O roteiro apresenta diferentes métodos de preparo, cafés especiais e doces artesanais, com paradas opcionais para degustação. Ideal para quem prefere um passeio tranquilo e descontraído.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!--  PONTOS TURÍSTICOS  -->
+            <section class="categoria-pacotes" id="pontos-turisticos">
+                <h3>PONTOS TURÍSTICOS</h3>
+
+                <article class="card-passeio" id="sampa-verde">
+                    <div class="card-imagem"><img src="img/SampaVerde.png" alt="Sampa Verde"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Verde</button></h4>
+                        <p class="card-descricao">Parque Ibirapuera: lago, Marquise, Oca e áreas verdes.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados, 8h30 às 11h30</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio ao ar livre pelo Parque Ibirapuera, com foco em natureza, lazer e paisagens. Começa em uma das entradas do parque, passa pelo lago, pela Marquise, pela Oca e por áreas verdes, com tempo para fotografias e descanso. Visitas internas a edifícios e exposições são opcionais.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-do-alto">
+                    <div class="card-imagem"><img src="img/SampaAlto.png" alt="Sampa do Alto"> --></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa do Alto</button></h4>
+                        <p class="card-descricao">Vistas do centro: Largo São Bento, Anhangabaú e Farol Santander.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Sábados, 14h às 17h</p>
+                        <div class="card-completo" hidden>
+                            <p>Roteiro por pontos com vistas marcantes do centro paulistano. Começa na região do Largo São Bento, passa pelo Vale do Anhangabaú e pelo Viaduto do Chá, seguindo até o Farol Santander. A visita ao mirante e às exposições depende da disponibilidade e é cobrada à parte.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card-passeio" id="sampa-independente">
+                    <div class="card-imagem"> <img src="img/SampaIndependente.png" alt="Sampa Independente"></div>
+                    <div class="card-info">
+                        <h4><button type="button" class="card-abrir" aria-haspopup="dialog">Sampa Independente</button></h4>
+                        <p class="card-descricao">Parque da Independência e arredores do Museu do Ipiranga.</p>
+                        <p class="card-preco">A partir de <strong>R$ --</strong></p>
+                        <p class="card-detalhes">Diurno · A pé · Domingos, 9h às 12h</p>
+                        <div class="card-completo" hidden>
+                            <p>Passeio pela região do Ipiranga, com foco na história da Independência do Brasil e nos espaços ao redor do Museu do Ipiranga. Começa no Parque da Independência, percorre os jardins e os monumentos e termina próximo ao museu, cuja visita interna pode ser feita mediante ingresso e disponibilidade.</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+        </section>
+
+        <section class="horarios-passeios" id="horarios">
+
+            <h2>HORÁRIOS DOS PASSEIOS</h2>
+
+            <table class="tabela-pacotes">
+
+                <thead>
+                    <tr>
+                        <th scope="col">PASSEIO</th>
+                        <th scope="col">DIA</th>
+                        <th scope="col">HORÁRIO DE SAÍDA</th>
+                        <th scope="col">VALOR</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            Centro Histórico
+                            <span class="detalhes-passeio">
+                                Metrô Sé · Guia Giovanna
+                            </span>
+                        </td>
+                        <td>Sábado</td>
+                        <td>09h</td>
+                        <td>R$ 25,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Centro Histórico
+                            <span class="detalhes-passeio">
+                                Metrô Sé · Guia Giovanna
+                            </span>
+                        </td>
+                        <td>Sábado</td>
+                        <td>09h</td>
+                        <td>R$ 25,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Centro Histórico
+                            <span class="detalhes-passeio">
+                                Metrô Sé · Guia Giovanna
+                            </span>
+                        </td>
+                        <td>Sábado</td>
+                        <td>09h</td>
+                        <td>R$ 25,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Centro Histórico
+                            <span class="detalhes-passeio">
+                                Metrô Sé · Guia Giovanna
+                            </span>
+                        </td>
+                        <td>Sábado</td>
+                        <td>09h</td>
+                        <td>R$ 25,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Centro Histórico
+                            <span class="detalhes-passeio">
+                                Metrô Sé · Guia Giovanna
+                            </span>
+                        </td>
+                        <td>Sábado</td>
+                        <td>09h</td>
+                        <td>R$ 25,00</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <!-- Janela de detalhes  -->
+    <dialog class="janela-detalhes" id="janela-detalhes" aria-labelledby="janela-titulo">
+        <button type="button" class="janela-fechar" aria-label="Fechar detalhes">&times;</button>
+        <div class="janela-imagem"></div>
+        <div class="janela-corpo">
+            <p class="janela-categoria"></p>
+            <h3 class="janela-titulo" id="janela-titulo"></h3>
+            <p class="janela-meta"></p>
+            <div class="janela-texto"></div>
+            <p class="janela-preco"></p>
+            <a class="botao-reservar" href="reserva.html">RESERVAR ESTE PASSEIO</a>
+        </div>
+    </dialog>
+
+    <footer class="rodape" id="contato">
+
+        <h2>ENTRE EM CONTATO</h2>
+
+        <section class="informacoes-contato" aria-label="Informações de contato">
+
+            <section class="contato-item">
+                <h3>LOCALIZAÇÃO</h3>
+                <p>São Paulo - SP</p>
+            </section>
+
+            <section class="contato-item">
+                <h3>TELEFONE</h3>
+                <p>
+                    <a href="tel:+551140028922">(11) 4002-8922</a>
+                </p>
+            </section>
+
+            <section class="contato-item">
+                <h3>E-MAIL</h3>
+                <p>
+                    <a href="mailto:sac@sampatour.com.br">
+                        sac@sampatour.com.br
+                    </a>
+                </p>
+            </section>
+
+            <section class="contato-item">
+                <h3>REDES SOCIAIS</h3>
+                <p>@sampatour</p>
+            </section>
+
+        </section>
+
+    </footer>
+
+
+</body>
+</html>
