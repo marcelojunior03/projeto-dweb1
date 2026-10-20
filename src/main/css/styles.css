@@ -1,0 +1,2358 @@
+:root {
+  --preto: #000000;
+  --creme: #fff6e5;
+  --vermelho: #ff3333;
+  --cinza: #8a8a8a;
+  --fonte:
+    "Helvetica Neue", "Helvetica Now Display", Helvetica, "Inter", Arial,
+    sans-serif;
+  --fonte-quiz:
+    "Instrument Sans", "DM Sans", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif;
+  --cinza-linha: #111111;
+  --vinho: #c8001e;
+  --borda-campo: #1a1a2e;
+  --fonte-form: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* home.html   */
+
+body.pagina-home {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: var(--fonte);
+  font-weight: 300;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*  CABEÇALHO  */
+
+body.pagina-home .cabecalho {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "marca  menu"
+    "selo   selo"
+    "logo   slogan";
+  padding: 14px 42px 64px;
+  background: var(--preto);
+}
+
+/* Marca SAMPA TOUR*/
+
+body.pagina-home .cabecalho::before {
+  content: "";
+  grid-area: marca;
+  align-self: start;
+  margin-top: 15px;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/logotipo-branco.svg") no-repeat left center /
+    contain;
+}
+
+/* Selo  "ISSO É" */
+
+body.pagina-home .cabecalho::after {
+  grid-area: selo;
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 45px;
+  margin: 92px 0 22px;
+  content: "ISSO É";
+  border: 1px solid var(--creme);
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--creme);
+}
+
+/* Logo grande: o texto original fica oculto e fica redesenhado com pseudo-elementos */
+
+body.pagina-home .logo {
+  grid-area: logo;
+  font-size: 0;
+  line-height: 0;
+}
+
+body.pagina-home .logo::before,
+body.pagina-home .logo::after {
+  display: block;
+  font-size: clamp(60px, 12.8vw, 150px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+}
+
+body.pagina-home .logo::before {
+  content: "SAMPA";
+  color: var(--creme);
+}
+
+body.pagina-home .logo::after {
+  content: "TOUR";
+  color: var(--vermelho);
+}
+
+body.pagina-home .slogan {
+  grid-area: slogan;
+  align-self: end;
+  justify-self: end;
+  max-width: 550px;
+  margin-bottom: 4px;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.3;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+/* Menu */
+
+body.pagina-home .menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: start;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+body.pagina-home .menu-lista {
+  display: flex;
+  gap: 16px;
+}
+
+body.pagina-home .menu-lista a {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+body.pagina-home .menu-lista li:first-child a {
+  color: var(--creme);
+}
+
+body.pagina-home .menu-lista a:hover {
+  color: var(--creme);
+}
+
+/* 
+   APRESENTAÇÃO
+ */
+
+body.pagina-home .apresentacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+  align-items: start;
+  min-height: 422px;
+  margin-bottom: 128px;
+}
+
+body.pagina-home .apresentacao > * {
+  grid-column: 1;
+  padding-left: 26px;
+  padding-right: 24px;
+}
+
+body.pagina-home .titulo-secao {
+  grid-row: 2;
+  align-self: end;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: 26px;
+}
+
+body.pagina-home .titulo-secao::before,
+body.pagina-home .titulo-secao::after {
+  font-size: clamp(30px, 5.3vw, 60px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  white-space: pre;
+}
+
+body.pagina-home .titulo-secao::before {
+  content: "UMA\A CELEBRAÇÃO\A DA ";
+  color: var(--creme);
+}
+
+body.pagina-home .titulo-secao::after {
+  content: "CIDADE";
+  color: var(--vermelho);
+}
+
+body.pagina-home .descricao {
+  grid-row: 3;
+  max-width: 630px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+body.pagina-home .destaque {
+  grid-row: 4;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--creme);
+}
+
+body.pagina-home .destaque strong {
+  font-weight: 700;
+}
+
+body.pagina-home .video-apresentacao {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  justify-self: end;
+  align-self: center;
+  margin-top: 125px;
+  width: auto;
+  height: 55%;
+  min-height: auto;
+  padding: 0;
+  object-fit: contain;
+  background: #1a1a1a;
+  pointer-events: none;
+  outline: none;
+  border: none;
+}
+
+body.pagina-home .video-apresentacao::-webkit-media-controls {
+  display: none !important;
+}
+
+/* 
+   CHAMADA PARA O QUIZ
+ */
+
+body.pagina-home .chamada-quiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 100px;
+  text-align: center;
+}
+
+body.pagina-home .chamada-quiz h2 {
+  font-size: 0;
+  line-height: 0;
+}
+
+body.pagina-home .chamada-quiz h2::before {
+  display: block;
+  content: "QUAL TOUR";
+  font-size: clamp(48px, 8.8vw, 100px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  color: var(--creme);
+}
+
+body.pagina-home .chamada-quiz h2::after {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  content: "É A SUA CARA ?";
+  font-size: clamp(30px, 5.3vw, 60px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+  background: linear-gradient(
+    90deg,
+    var(--creme) 0 22%,
+    var(--vermelho) 22% 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+body.pagina-home .chamada-quiz p {
+  margin-top: 4px;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: lowercase;
+  color: var(--creme);
+}
+
+body.pagina-home .chamada-quiz p::first-letter {
+  text-transform: uppercase;
+}
+
+body.pagina-home .botao-quiz {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 60px;
+  margin-top: 32px;
+  border-radius: 999px;
+  background: var(--creme);
+  color: var(--preto);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+
+body.pagina-home .botao-quiz:hover {
+  background: var(--vermelho);
+  transform: scale(1.04);
+}
+
+/* 
+   RODAPÉ
+ */
+
+body.pagina-home .rodape {
+  margin: 0 20px;
+  padding: 52px 22px 70px;
+  border-top: 2px solid var(--vermelho);
+}
+
+body.pagina-home .rodape h2 {
+  margin-bottom: 22px;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--creme);
+}
+
+body.pagina-home .informacoes-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 24px;
+}
+
+body.pagina-home .contato-item h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--vermelho);
+}
+
+body.pagina-home .contato-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--creme);
+}
+
+body.pagina-home .contato-item a:hover {
+  color: var(--vermelho);
+}
+
+/* 
+   RESPONSIVIDADE
+ */
+
+@media (max-width: 700px) {
+  /* Menu hambúrguer: menu suspenso em telas pequenas */
+
+  body.pagina-home .menu {
+    position: relative;
+    z-index: 1000;
+  }
+
+  body.pagina-home .menu .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    padding: 7px 9px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  body.pagina-home .menu .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.35);
+  }
+
+  body.pagina-home .menu .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #000;
+    z-index: 1001;
+  }
+
+  body.pagina-home .menu .navbar-collapse .menu-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  body.pagina-home .menu .navbar-collapse .menu-lista a {
+    display: block;
+    padding: 4px 2px;
+    font-size: 16px;
+  }
+
+  body.pagina-home .cabecalho {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "menu"
+      "marca"
+      "selo"
+      "logo"
+      "slogan";
+    padding: 14px 24px 48px;
+  }
+
+  body.pagina-home .menu {
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  body.pagina-home .menu-lista {
+    text-align: right;
+  }
+
+  body.pagina-home .cabecalho::after {
+    margin-top: 48px;
+  }
+
+  body.pagina-home .slogan {
+    justify-self: start;
+    margin-top: 24px;
+    text-align: left;
+  }
+
+  body.pagina-home .apresentacao {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-bottom: 80px;
+  }
+
+  body.pagina-home .apresentacao > * {
+    grid-column: 1;
+    grid-row: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  body.pagina-home .titulo-secao {
+    margin-bottom: 18px;
+  }
+
+  body.pagina-home .titulo-secao::before,
+  body.pagina-home .titulo-secao::after {
+    font-size: 44px;
+  }
+
+  body.pagina-home .video-apresentacao {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    height: auto;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 368 / 422;
+  }
+
+  body.pagina-home .informacoes-contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PÁGINA: quiz.html  (body.pagina-quiz)
+   ===================================================== */
+
+body.pagina-quiz {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: var(--fonte);
+  font-weight: 300;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*  leitores de tela */
+
+body.pagina-quiz .introducao-quiz,
+body.pagina-quiz .area-quiz > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 
+   CABEÇALHO
+ */
+
+body.pagina-quiz .cabecalho {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "marca   menu"
+    "titulo  titulo"
+    "slogan  slogan";
+  padding: 18px 0 0;
+}
+
+/* Marca SAMPA TOUR*/
+
+body.pagina-quiz .cabecalho::before {
+  content: "";
+  grid-area: marca;
+  align-self: start;
+  margin-top: 15px;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/logotipo-branco.svg") no-repeat left center /
+    contain;
+}
+
+/* Menu */
+
+body.pagina-quiz .menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: start;
+  margin-right: 25px;
+  margin-top: 15px;
+}
+
+body.pagina-quiz .menu-lista {
+  display: flex;
+  gap: 18px;
+}
+
+body.pagina-quiz .menu-lista a {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+body.pagina-quiz .menu-lista a[aria-current="page"],
+body.pagina-quiz .menu-lista a:hover {
+  color: var(--creme);
+}
+
+body.pagina-quiz .titulo-principal {
+  grid-area: titulo;
+  margin-top: 58px;
+  font-size: clamp(52px, 13.2vw, 120px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  color: var(--creme);
+}
+
+body.pagina-quiz .titulo-destaque {
+  color: var(--vermelho);
+}
+
+body.pagina-quiz .slogan {
+  grid-area: slogan;
+  margin-top: 26px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--creme);
+}
+
+/* 
+   CARTÃO DO QUIZ
+*/
+
+body.pagina-quiz .area-quiz {
+  display: flex;
+  justify-content: center;
+  margin-top: 58px;
+  padding: 0 20px;
+}
+
+body.pagina-quiz .cartao-quiz {
+  width: min(150%, 478px);
+  padding: 17px 15px 24px;
+  border: 5px solid var(--vermelho);
+  border-radius: 22px;
+  background: #ffffff;
+  color: #111111;
+  font-family: var(--fonte-quiz);
+}
+
+body.pagina-quiz .cartao-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+body.pagina-quiz .pergunta {
+  max-width: 260px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+body.pagina-quiz .progresso {
+  font-size: 15px;
+  font-weight: 300;
+  color: #111111;
+}
+
+body.pagina-quiz .opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+body.pagina-quiz .opcao {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 63px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 10px;
+  background: #ececec;
+  color: #111111;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+body.pagina-quiz .opcao:hover,
+body.pagina-quiz .opcao:focus-visible {
+  background: var(--vermelho);
+  color: #ffffff;
+  outline: none;
+}
+
+body.pagina-quiz .aviso-quiz {
+  margin-top: 16px;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+  color: #111111;
+}
+
+/* 
+   RODAPÉ
+ */
+
+body.pagina-quiz .rodape {
+  margin: 165px 22px 0;
+  padding: 54px 25px 70px;
+  border-top: 2px solid var(--vermelho);
+}
+
+body.pagina-quiz .rodape h2 {
+  margin-bottom: 24px;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--creme);
+}
+
+body.pagina-quiz .informacoes-contato {
+  display: grid;
+  grid-template-columns: 56.7% 1fr;
+  row-gap: 28px;
+}
+
+body.pagina-quiz .contato-item h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--vermelho);
+}
+
+body.pagina-quiz .contato-item p {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--creme);
+}
+
+body.pagina-quiz .contato-item a:hover {
+  color: var(--vermelho);
+}
+
+/* 
+   RESPONSIVIDADE
+ */
+
+@media (max-width: 760px) {
+  /* Menu hambúrguer: menu suspenso em telas pequenas */
+
+  body.pagina-quiz .menu {
+    position: relative;
+    z-index: 1000;
+  }
+
+  body.pagina-quiz .menu .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    padding: 7px 9px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  body.pagina-quiz .menu .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.35);
+  }
+
+  body.pagina-quiz .menu .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #000;
+    z-index: 1001;
+  }
+
+  body.pagina-quiz .menu .navbar-collapse .menu-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  body.pagina-quiz .menu .navbar-collapse .menu-lista a {
+    display: block;
+    padding: 4px 2px;
+    font-size: 16px;
+  }
+
+  body.pagina-quiz .cabecalho {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "marca menu"
+      "selo"
+      "logo"
+      "slogan";
+    padding: 14px 24px 48px;
+  }
+
+  body.pagina-quiz .menu {
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  body.pagina-quiz .menu-lista {
+    text-align: right;
+  }
+
+  body.pagina-quiz .cabecalho::before {
+    margin-left: 24px;
+  }
+
+  body.pagina-quiz .titulo-principal,
+  body.pagina-quiz .slogan {
+    width: calc(100% - 48px);
+  }
+
+  body.pagina-quiz .titulo-principal {
+    font-size: 13.6vw;
+  }
+
+  body.pagina-quiz .rodape {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.pagina-quiz .informacoes-contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PÁGINA: pacotes.html  (body.pagina-pacotes)
+   ===================================================== */
+
+body.pagina-pacotes {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: var(--fonte);
+  font-weight: 300;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Trava a rolagem do fundo enquanto a janela de detalhes está aberta */
+
+body.pagina-pacotes:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* Texto leitores de tela */
+
+body.pagina-pacotes .filtro-pacotes > h2,
+body.pagina-pacotes .filtro-pacotes > p,
+body.pagina-pacotes .lista-pacotes > h2,
+body.pagina-pacotes .categoria-pacotes > h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 
+   CABEÇALHO
+ */
+
+body.pagina-pacotes .cabecalho {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "marca   menu"
+    "titulo  titulo"
+    "slogan  slogan";
+  padding: 14px 42px 22px;
+}
+
+/* Marca SAMPA TOUR*/
+
+body.pagina-pacotes .cabecalho::before {
+  content: "";
+  grid-area: marca;
+  align-self: start;
+  margin-top: 15px;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/logotipo-branco.svg") no-repeat left center /
+    contain;
+}
+
+body.pagina-pacotes .titulo-principal {
+  grid-area: titulo;
+  margin-top: 50px;
+  font-size: clamp(56px, 11.6vw, 110px);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--creme);
+}
+
+body.pagina-pacotes .slogan {
+  grid-area: slogan;
+  margin-top: 6px;
+  padding-left: 3px;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--creme);
+}
+
+/* Menu */
+
+body.pagina-pacotes .menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: start;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+body.pagina-pacotes .menu-lista {
+  display: flex;
+  gap: 16px;
+}
+
+body.pagina-pacotes .menu-lista a {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+body.pagina-pacotes .menu-lista a[aria-current="page"],
+body.pagina-pacotes .menu-lista a:hover {
+  color: var(--creme);
+}
+
+body.pagina-pacotes .filtro-pacotes {
+  padding: 0 45px;
+}
+
+body.pagina-pacotes .filtro-pacotes .chamada-quiz {
+  display: none;
+}
+
+body.pagina-pacotes .menu-categorias ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 14px;
+}
+
+body.pagina-pacotes .menu-categorias a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 102px;
+  height: 25px;
+  padding: 0 16px;
+  border: 1px solid var(--creme);
+  border-radius: 999px;
+  background: var(--preto);
+  color: var(--creme);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+
+body.pagina-pacotes .menu-categorias a:hover {
+  border-color: var(--vermelho);
+}
+
+/* Filtro ativo: "Todos" por padrão 
+muda conforme a categoria selecionada */
+
+body.pagina-pacotes .menu-categorias li:first-child a {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+}
+
+body.pagina-pacotes:has(.categoria-pacotes:target)
+  .menu-categorias
+  li:first-child
+  a {
+  background: var(--preto);
+  border-color: var(--creme);
+}
+
+body.pagina-pacotes:has(#historia-cultura:target)
+  .menu-categorias
+  li:nth-child(2)
+  a,
+body.pagina-pacotes:has(#arte-arquitetura:target)
+  .menu-categorias
+  li:nth-child(3)
+  a,
+body.pagina-pacotes:has(#gastronomia:target) .menu-categorias li:nth-child(4) a,
+body.pagina-pacotes:has(#pontos-turisticos:target)
+  .menu-categorias
+  li:nth-child(5)
+  a {
+  background: var(--vermelho);
+  border-color: var(--vermelho);
+}
+
+/* 
+   LISTA DE PACOTES
+ */
+
+body.pagina-pacotes .lista-pacotes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 18px;
+  margin-top: 34px;
+  padding: 0 32px;
+}
+
+body.pagina-pacotes .categoria-pacotes {
+  display: contents;
+}
+
+/* Filtro por categoria via link */
+
+body.pagina-pacotes
+  .lista-pacotes:has(.categoria-pacotes:target)
+  .categoria-pacotes:not(:target) {
+  display: none;
+}
+
+/* Card de passeio */
+
+body.pagina-pacotes .card-passeio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  color: #000000;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  border-radius: 5%;
+}
+
+body.pagina-pacotes .card-passeio:hover,
+body.pagina-pacotes .card-passeio:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 2px var(--vermelho);
+}
+
+body.pagina-pacotes .card-imagem {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 196 / 150;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2e2e2e, #181818);
+}
+
+body.pagina-pacotes .card-imagem::before {
+  content: "IMAGEM";
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #6b6b6b;
+}
+
+body.pagina-pacotes .card-imagem img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.pagina-pacotes .card-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px 9px 12px;
+}
+
+body.pagina-pacotes .card-info h4 {
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+body.pagina-pacotes .card-abrir {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: left;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+body.pagina-pacotes .card-abrir::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+body.pagina-pacotes .card-abrir:focus-visible {
+  outline: none;
+}
+
+body.pagina-pacotes .card-descricao {
+  margin-bottom: 10px;
+  font-size: 9px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #000000;
+}
+
+body.pagina-pacotes .card-preco {
+  margin-top: auto;
+  margin-bottom: 4px;
+  padding-left: 2px;
+  font-size: 10px;
+  font-weight: 300;
+  color: #000000;
+}
+
+body.pagina-pacotes .card-preco strong {
+  font-weight: 700;
+  color: var(--vermelho);
+}
+
+body.pagina-pacotes .card-detalhes {
+  padding-left: 2px;
+  font-size: 9px;
+  font-weight: 300;
+  color: #8a8a8a;
+}
+
+body.pagina-pacotes .card-completo {
+  display: none;
+}
+
+/* 
+   JANELA DE DETALHES 
+ */
+
+body.pagina-pacotes .janela-detalhes {
+  position: fixed;
+  inset: 0;
+  width: min(92vw, 640px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  overflow-y: auto;
+  border: 0;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 -7px 0 0 var(--vermelho);
+}
+
+body.pagina-pacotes .janela-detalhes::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+body.pagina-pacotes .janela-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+body.pagina-pacotes .janela-fechar:hover,
+body.pagina-pacotes .janela-fechar:focus-visible {
+  background: var(--vermelho);
+  outline: none;
+}
+
+body.pagina-pacotes .janela-imagem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(135deg, #2e2e2e, #181818);
+}
+
+body.pagina-pacotes .janela-imagem::before {
+  content: "IMAGEM";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #6b6b6b;
+}
+
+body.pagina-pacotes .janela-imagem img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.pagina-pacotes .janela-corpo {
+  padding: 22px 26px 28px;
+}
+
+body.pagina-pacotes .janela-categoria {
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vermelho);
+}
+
+body.pagina-pacotes .janela-titulo {
+  margin-bottom: 6px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+body.pagina-pacotes .janela-meta {
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+body.pagina-pacotes .janela-texto p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #111111;
+}
+
+body.pagina-pacotes .janela-preco {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000000;
+}
+
+body.pagina-pacotes .janela-preco strong {
+  font-weight: 700;
+  color: var(--vermelho);
+}
+
+body.pagina-pacotes .botao-reservar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: var(--vermelho);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+body.pagina-pacotes .botao-reservar:hover,
+body.pagina-pacotes .botao-reservar:focus-visible {
+  background: #000000;
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* 
+   HORÁRIOS DOS PASSEIOS
+ */
+
+body.pagina-pacotes .horarios-passeios {
+  margin-top: 100px;
+  padding: 0 38px;
+}
+
+body.pagina-pacotes .horarios-passeios h2 {
+  margin-bottom: 20px;
+  font-size: 0;
+  line-height: 0;
+}
+
+body.pagina-pacotes .horarios-passeios h2::before,
+body.pagina-pacotes .horarios-passeios h2::after {
+  font-size: clamp(30px, 5.8vw, 46px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  white-space: pre;
+}
+
+body.pagina-pacotes .horarios-passeios h2::before {
+  content: "HORÁRIOS DOS\A";
+  color: var(--creme);
+}
+
+body.pagina-pacotes .horarios-passeios h2::after {
+  content: "PASSEIOS";
+  color: var(--vermelho);
+}
+
+body.pagina-pacotes .tabela-pacotes {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+body.pagina-pacotes .tabela-pacotes th {
+  height: 45px;
+  background: var(--vermelho);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.pagina-pacotes .tabela-pacotes th:first-child {
+  padding-left: 3px;
+  text-align: left;
+}
+
+body.pagina-pacotes .tabela-pacotes th + th {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+body.pagina-pacotes .tabela-pacotes td {
+  height: 45px;
+  background: var(--cinza-linha);
+  border-bottom: 1px solid var(--preto);
+  color: var(--creme);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.3;
+  text-align: center;
+}
+
+body.pagina-pacotes .tabela-pacotes td:first-child {
+  padding-left: 4px;
+  text-align: left;
+}
+
+body.pagina-pacotes .detalhes-passeio {
+  display: block;
+}
+
+/* 
+   RODAPÉ
+ */
+
+body.pagina-pacotes .rodape {
+  margin: 52px 18px 0;
+  padding: 52px 20px 70px;
+  border-top: 2px solid var(--vermelho);
+}
+
+body.pagina-pacotes .rodape h2 {
+  margin-bottom: 22px;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--creme);
+}
+
+body.pagina-pacotes .informacoes-contato {
+  display: grid;
+  grid-template-columns: 56.7% 1fr;
+  row-gap: 24px;
+}
+
+body.pagina-pacotes .contato-item h3 {
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--vermelho);
+}
+
+body.pagina-pacotes .contato-item p {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--creme);
+}
+
+body.pagina-pacotes .contato-item a:hover {
+  color: var(--vermelho);
+}
+
+/* 
+   RESPONSIVIDADE
+ */
+
+@media (max-width: 767.98px) {
+  body.pagina-pacotes .cabecalho {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "marca menu"
+      "titulo titulo"
+      "slogan slogan";
+    padding: 14px 24px 22px;
+  }
+
+  body.pagina-pacotes .cabecalho::before {
+    grid-area: marca;
+  }
+
+  body.pagina-pacotes .titulo-principal {
+    grid-area: titulo;
+    min-width: 0;
+    margin-top: 50px;
+    font-size: clamp(44px, 14vw, 80px);
+    line-height: 0.85;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-spacing: normal;
+  }
+
+  body.pagina-pacotes .slogan {
+    grid-area: slogan;
+    min-width: 0;
+    margin-top: 12px;
+    padding-left: 3px;
+    overflow-wrap: break-word;
+  }
+
+  body.pagina-pacotes .menu {
+    position: relative;
+    z-index: 1000;
+    grid-area: menu;
+    justify-self: end;
+    align-self: start;
+    min-width: 0;
+    margin: 15px 0 0;
+  }
+
+  body.pagina-pacotes .menu .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #000;
+    z-index: 1001;
+  }
+
+  body.pagina-pacotes .menu-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: right;
+  }
+
+  body.pagina-pacotes .menu-lista a {
+    font-size: 16px;
+  }
+
+  body.pagina-pacotes .filtro-pacotes {
+    padding: 0 24px;
+  }
+
+  body.pagina-pacotes .lista-pacotes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 24px;
+  }
+
+  body.pagina-pacotes .horarios-passeios {
+    padding: 0 24px;
+    overflow-x: auto;
+  }
+
+  body.pagina-pacotes .tabela-pacotes {
+    min-width: 480px;
+  }
+
+  body.pagina-pacotes .janela-corpo {
+    padding: 18px 20px 24px;
+  }
+
+  body.pagina-pacotes .janela-titulo {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.pagina-pacotes .lista-pacotes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body.pagina-pacotes .informacoes-contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PÁGINA: reserva.html  (body.pagina-reserva)
+   ===================================================== */
+
+body.pagina-reserva {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: var(--fonte);
+  font-weight: 300;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.pagina-reserva .titulo-destaque {
+  color: var(--vermelho);
+}
+
+/* leitores de tela */
+
+body.pagina-reserva .secao-reserva > h2,
+body.pagina-reserva .descricao-reserva,
+body.pagina-reserva .dados-pessoais > legend,
+body.pagina-reserva .dados-passeio > legend,
+body.pagina-reserva .termos-reserva > legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 
+   CABEÇALHO
+ */
+
+body.pagina-reserva .cabecalho {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "marca   menu"
+    "titulo  titulo"
+    "slogan  slogan";
+  padding: 16px 0 0 42px;
+}
+
+/* Marca SAMPA TOUR*/
+
+body.pagina-reserva .cabecalho::before {
+  content: "";
+  grid-area: marca;
+  align-self: start;
+  margin-top: 15px;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/logotipo-branco.svg") no-repeat left center /
+    contain;
+}
+
+/* Menu */
+
+body.pagina-reserva .menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: start;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+body.pagina-reserva .menu-lista {
+  display: flex;
+  gap: 16px;
+}
+
+body.pagina-reserva .menu-lista a {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+body.pagina-reserva .menu-lista a[aria-current="page"],
+body.pagina-reserva .menu-lista a:hover {
+  color: var(--creme);
+}
+
+body.pagina-reserva .titulo-principal {
+  grid-area: titulo;
+  margin-top: 48px;
+  padding-left: 3px;
+  font-size: clamp(52px, 11.8vw, 110px);
+  font-weight: 700;
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  word-spacing: 1.4em;
+  white-space: nowrap;
+  color: var(--creme);
+}
+
+body.pagina-reserva .titulo-principal .titulo-destaque {
+  display: block;
+  word-spacing: normal;
+}
+
+body.pagina-reserva .slogan {
+  grid-area: slogan;
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--creme);
+}
+
+/*
+   FORMULÁRIO DE RESERVA
+ */
+
+body.pagina-reserva .secao-reserva {
+  display: flex;
+  justify-content: center;
+  margin-top: 41px;
+  padding: 0 4.7vw 0 20px;
+}
+
+body.pagina-reserva .formulario-reserva {
+  width: min(100%, 458px);
+  padding: 18px 18px 19px;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--fonte-form);
+  box-shadow: 0 -7px 0 0 var(--vinho);
+}
+
+body.pagina-reserva .formulario-reserva fieldset {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 0;
+}
+
+body.pagina-reserva .formulario-reserva label,
+body.pagina-reserva .horarios-passeio > legend {
+  display: block;
+  margin-bottom: 4px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+}
+
+body.pagina-reserva .formulario-reserva input[type="text"],
+body.pagina-reserva .formulario-reserva input[type="email"],
+body.pagina-reserva .formulario-reserva input[type="tel"],
+body.pagina-reserva .formulario-reserva input[type="date"],
+body.pagina-reserva .formulario-reserva input[type="number"],
+body.pagina-reserva .formulario-reserva select,
+body.pagina-reserva .formulario-reserva textarea {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 14px;
+  padding: 0 11px;
+  border: 1px solid var(--borda-campo);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--borda-campo);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+body.pagina-reserva .formulario-reserva input:focus,
+body.pagina-reserva .formulario-reserva select:focus,
+body.pagina-reserva .formulario-reserva textarea:focus {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 1px;
+}
+
+/* Campos vazios em cinza*/
+
+body.pagina-reserva .formulario-reserva select:invalid,
+body.pagina-reserva .formulario-reserva input[type="date"],
+body.pagina-reserva .formulario-reserva input[type="number"] {
+  color: #6b6b7b;
+}
+
+body.pagina-reserva .formulario-reserva textarea {
+  height: 65px;
+  padding: 8px 11px;
+  margin-bottom: 14px;
+  resize: none;
+}
+
+body.pagina-reserva .formulario-reserva .horarios-passeio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  margin-bottom: 19px;
+}
+
+body.pagina-reserva .horarios-passeio > legend {
+  margin-bottom: 4px;
+}
+
+body.pagina-reserva .horarios-passeio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.pagina-reserva .formulario-reserva .horarios-passeio label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  margin: 0;
+  border: 1px solid var(--borda-campo);
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 400;
+  color: #000000;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+body.pagina-reserva .horarios-passeio input[type="radio"]:checked + label {
+  background: #000000;
+  color: var(--creme);
+}
+
+body.pagina-reserva
+  .horarios-passeio
+  input[type="radio"]:focus-visible
+  + label {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+/* Aceite dos termos */
+
+body.pagina-reserva .formulario-reserva .termos-reserva {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+
+body.pagina-reserva .termos-reserva input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+body.pagina-reserva .termos-reserva input[type="checkbox"]:checked {
+  background: #000000
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.5l3 3 5-6' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E")
+    center / 100% no-repeat;
+}
+
+body.pagina-reserva .termos-reserva input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+body.pagina-reserva .formulario-reserva .termos-reserva label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Botão de confirmar */
+
+body.pagina-reserva .botao-reserva {
+  display: block;
+  width: 100%;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--vinho);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+body.pagina-reserva .botao-reserva:hover {
+  background: var(--vermelho);
+  transform: scale(1.02);
+}
+
+/* 
+   RODAPÉ
+ */
+
+body.pagina-reserva .rodape {
+  margin: 123px 20px 0;
+  padding: 50px 22px 110px;
+  border-top: 2px solid var(--vermelho);
+}
+
+body.pagina-reserva .rodape h2 {
+  margin-bottom: 22px;
+  font-size: 27px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--creme);
+}
+
+body.pagina-reserva .informacoes-contato {
+  display: grid;
+  grid-template-columns: 56.6% 1fr;
+  row-gap: 24px;
+}
+
+body.pagina-reserva .contato-item h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--vermelho);
+}
+
+body.pagina-reserva .contato-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--creme);
+}
+
+body.pagina-reserva .contato-item a:hover {
+  color: var(--vermelho);
+}
+
+/* 
+   RESPONSIVO
+ */
+
+@media (max-width: 760px) {
+  /* Menu hambúrguer: menu suspenso em telas pequenas */
+
+  body.pagina-reserva .menu {
+    position: relative;
+    z-index: 1000;
+  }
+
+  body.pagina-reserva .menu .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    padding: 7px 9px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  body.pagina-reserva .menu .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.35);
+  }
+
+  body.pagina-reserva .menu .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #000;
+    z-index: 1001;
+  }
+
+  body.pagina-reserva .menu .navbar-collapse .menu-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  body.pagina-reserva .menu .navbar-collapse .menu-lista a {
+    display: block;
+    padding: 4px 2px;
+    font-size: 16px;
+  }
+
+  body.pagina-reserva .cabecalho {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "marca menu"
+      "selo"
+      "logo"
+      "slogan";
+    padding: 14px 24px 48px;
+  }
+
+  body.pagina-reserva .menu {
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  body.pagina-reserva .menu-lista {
+    text-align: right;
+  }
+
+  body.pagina-reserva .titulo-principal {
+    font-size: 14vw;
+  }
+
+  body.pagina-reserva .secao-reserva {
+    padding: 0 20px;
+  }
+
+  body.pagina-reserva .rodape {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.pagina-reserva .informacoes-contato {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   PÁGINA: sobre.html  (body.pagina-sobre)
+   ===================================================== */
+
+body.pagina-sobre {
+  background: var(--preto);
+  color: var(--creme);
+  font-family: var(--fonte);
+  font-weight: 300;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.pagina-sobre .titulo-destaque {
+  color: var(--vermelho);
+}
+
+/* Conteúdo que existe no HTML mas não aparece no slide (fica para leitores de tela) */
+
+body.pagina-sobre .apresentacao-sobre,
+body.pagina-sobre .missao-valores > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 
+   CABEÇALHO
+ */
+
+body.pagina-sobre .cabecalho {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "marca   menu"
+    "titulo  titulo"
+    "slogan  slogan";
+  padding: 17px 0 0 46px;
+}
+
+/* Marca SAMPA TOUR*/
+
+body.pagina-sobre .cabecalho::before {
+  content: "";
+  grid-area: marca;
+  align-self: start;
+  margin-top: 15px;
+  width: 60px;
+  height: 60px;
+  background: url("../icons/logotipo-branco.svg") no-repeat left center /
+    contain;
+}
+
+/* Menu */
+
+body.pagina-sobre .menu {
+  grid-area: menu;
+  justify-self: end;
+  align-self: start;
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+body.pagina-sobre .menu-lista {
+  display: flex;
+  gap: 16px;
+}
+
+body.pagina-sobre .menu-lista a {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--cinza);
+  transition: color 0.2s;
+}
+
+body.pagina-sobre .menu-lista a[aria-current="page"],
+body.pagina-sobre .menu-lista a:hover {
+  color: var(--creme);
+}
+
+body.pagina-sobre .titulo-principal {
+  grid-area: titulo;
+  margin-top: 22px;
+  font-size: clamp(48px, 8vw, 100px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  white-space: nowrap;
+  color: var(--creme);
+}
+
+body.pagina-sobre .slogan {
+  grid-area: slogan;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--creme);
+}
+
+/* 
+   MISSÃO / VISÃO / VALORES 
+ */
+
+body.pagina-sobre .missao-valores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 59px;
+  margin-top: 41px;
+  padding: 13px 35px 0 46px;
+}
+
+body.pagina-sobre .principio-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 307px;
+  padding: 0 16px 10px;
+  border-radius: 28px;
+  background: #ffffff;
+  color: #000000;
+  /* faixa vermelha que aparece atrás do topo do cartão */
+  box-shadow: 0 -13px 0 0 var(--vermelho);
+}
+
+body.pagina-sobre .principio-item h3 {
+  margin-bottom: 14px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #000000;
+}
+
+body.pagina-sobre .principio-item p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* 
+   DEPOIMENTOS
+ */
+
+body.pagina-sobre .depoimentos {
+  margin-top: 96px;
+  padding: 0 46px;
+}
+
+body.pagina-sobre .depoimentos h2 {
+  font-size: clamp(36px, 7.6vw, 76px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--creme);
+}
+
+/* Linha branca sob o título */
+
+body.pagina-sobre .depoimentos h2::after {
+  display: block;
+  width: min(286px, 60%);
+  height: 2px;
+  margin: 14px 0 0 3px;
+  content: "";
+  background: #ffffff;
+}
+
+body.pagina-sobre .depoimento {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  column-gap: 29px;
+  align-items: start;
+  margin: 0 0 35px 15px;
+}
+
+body.pagina-sobre .depoimentos h2 + .depoimento {
+  margin-top: 40px;
+}
+
+/* Foto oval colocar <img class="depoimento-foto">) */
+
+body.pagina-sobre .depoimento-foto {
+  display: block;
+  width: 70px;
+  height: 75px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff6e5;
+}
+
+body.pagina-sobre .depoimento-conteudo {
+  min-width: 0;
+}
+
+body.pagina-sobre .estrelas {
+  font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--vermelho);
+}
+
+body.pagina-sobre .depoimento blockquote {
+  margin: 8px 0 12px;
+  padding-left: 18px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--creme);
+}
+
+body.pagina-sobre .autor {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--creme);
+}
+
+/* 
+   RODAPÉ
+*/
+
+body.pagina-sobre .rodape {
+  margin: 60px 21px 0;
+  padding: 52px 25px 70px;
+  border-top: 2px solid var(--vermelho);
+}
+
+body.pagina-sobre .rodape h2 {
+  margin-bottom: 22px;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--creme);
+}
+
+body.pagina-sobre .informacoes-contato {
+  display: grid;
+  grid-template-columns: 56.7% 1fr;
+  row-gap: 26px;
+}
+
+body.pagina-sobre .contato-item h3 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--vermelho);
+}
+
+body.pagina-sobre .contato-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--creme);
+}
+
+body.pagina-sobre .contato-item a:hover {
+  color: var(--vermelho);
+}
+
+/*
+   RESPONSIVO
+ */
+
+@media (max-width: 760px) {
+  /* Menu hambúrguer: menu suspenso em telas pequenas */
+
+  body.pagina-sobre .menu {
+    position: relative;
+    z-index: 1000;
+  }
+
+  body.pagina-sobre .menu .navbar-toggler {
+    display: block;
+    margin-left: auto;
+    border: 1px solid var(--cinza);
+    border-radius: 8px;
+    padding: 7px 9px;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  body.pagina-sobre .menu .navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(255, 51, 51, 0.35);
+  }
+
+  body.pagina-sobre .menu .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    max-width: calc(100vw - 48px);
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #000;
+    z-index: 1001;
+  }
+
+  body.pagina-sobre .menu .navbar-collapse .menu-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  body.pagina-sobre .menu .navbar-collapse .menu-lista a {
+    display: block;
+    padding: 4px 2px;
+    font-size: 16px;
+  }
+
+  body.pagina-sobre .cabecalho {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "marca menu"
+      "selo"
+      "logo"
+      "slogan";
+    padding: 14px 24px 48px;
+  }
+
+  body.pagina-sobre .menu {
+    justify-self: end;
+    margin-right: 0;
+  }
+
+  body.pagina-sobre .menu-lista {
+    text-align: right;
+  }
+
+  body.pagina-sobre .missao-valores {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 13px 24px 0;
+  }
+
+  body.pagina-sobre .depoimentos {
+    padding: 0 24px;
+  }
+
+  body.pagina-sobre .depoimento {
+    margin-left: 0;
+  }
+
+  body.pagina-sobre .rodape {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  body.pagina-sobre .informacoes-contato {
+    grid-template-columns: 1fr;
+  }
+
+  body.pagina-sobre .depoimento {
+    grid-template-columns: 56px 1fr;
+    column-gap: 16px;
+  }
+
+  body.pagina-sobre .depoimento-foto {
+    width: 56px;
+    height: 60px;
+  }
+}
