@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+	<title>SampaTour - Reserva</title>
+	
+	<base href="https://www.sampatour.com.br/" target="_blank">
+	
+	<link rel="stylesheet" href="styles.css">
+	
+    <meta charset="UTF-8">
+    <meta name="keywords" content="passeio, turístico, família">
+    <meta name="description" content="Reservas de passeios turísticos por São Paulo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+
+	<header>
+
+        <h1>FAÇA SUA RESERVA</h1>
+        
+        <p>
+        	Escolha seu roteiro, a data e o horário. Leva menos de um minuto
+        </p>
+
+        <nav>
+		    <a href="../index.html">Home</a>
+		</nav>
+		
+		<br>
+
+    </header>
+    
+    <main>
+
+        <form>
+
+            <fieldset>
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome">
+
+                <br><br>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+
+                <br><br>
+
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" placeholder="99 99999-9999">
+
+                <br><br>
+
+                <label for="tour">Tour escolhido</label>
+
+                <select id="tour" name="tour">
+                    <option value="Centro histórico">Centro histórico</option>
+                    <option value="Tour2">Tour2</option>
+                    <option value="Tour3">Tour3</option>
+                    <option value="Tour4">Tour4</option>
+                    <option value="Tour5">Tour5</option>
+                </select>
+
+                <br><br>
+                
+                <label for="data">Data do passeio</label>
+
+                <input type="date" id="data" name="data">
+
+                <br><br>
+                
+                <label for="pessoas">Número de pessoas</label>
+
+                <input type="number" id="pessoas" name="pessoas" min="1" value="1">
+
+                <br><br>
+
+                <fieldset>
+
+                    <legend>Horário</legend>
+
+                    <input type="radio" id="manha" name="horario" value="Manha" checked>
+
+                    <label for="economico">Manhã (09h)</label>
+
+
+                    <input type="radio" id="tarde" name="horario" value="Tarde">
+
+                    <label for="standard">Tarde (14h)</label>
+
+
+                    <input type="radio" id="noite" name="horario" value="Noite">
+
+                    <label for="luxo">Noite (19h)</label>
+
+                </fieldset>
+
+                <br>
+                
+                <label for="observacoes">Observações</label>
+
+                <br>
+
+                <textarea id="observacoes" name="observacoes" rows="5" cols="50"></textarea>
+
+                <br><br>
+
+                <label for="pagamento">Forma de Pagamento</label>
+
+                <select id="pagamento" name="pagamento">
+
+                    <option value="pix">Pix</option>
+                    <option value="boleto">Boleto</option>
+                    <option value="cartão de crédito">Cartão de crédito</option>
+
+                </select>
+
+                <br><br>
+                
+                <input type="checkbox" id="termos" name="termos">
+
+                <label for="termos">Aceito os termos e condições.</label>
+
+                <br><br>
+
+                <button type="button" onclick="alert('RESERVA REALIZADA COM SUCESSO!')">
+                    CONFIRMAR RESERVA
+                </button>
+
+            </fieldset>
+
+        </form>
+    
+    </main>
+    
+    <footer>
+    
+    	<hr>
+
+        <h3>ENTRE EM CONTATO</h3>
+        
+        <div>
+        	<h4>LOCALIZAÇÃO</h4>
+        	<p>São Paulo - SP</p>
+        	
+	        <h4>TELEFONE</h4> 
+	        <p>(11) 4002-8922</p>
+	        
+	        <h4>E-MAIL</h4>
+	        <a href="mailto:sac@sampatour.com.br">sac@sampatour.com.br</a>
+	        
+	        <h4>REDES</h4>
+	        <p>@sampatour</p>
+        </div>
+
+    </footer>
+    
+</body>
+</html>
